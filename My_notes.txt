@@ -1,0 +1,33 @@
+Django Testing
+====================
+
+ - Test file must start with test prefix.
+ - function to test a feature should also start with test prefix.
+ - For using django test module import TestCase from django.test
+ - TestCase methods
+    - assertEqual = To test equality
+    - assertTrue = For checking password match
+
+
+
+Creating Django Project
+==========================
+
+docker-compose run app sh -c "django-admin.py startproject app ."
+
+Creating Django App
+==========================
+
+docker-compose run app sh -c "python manage.py startapp core"
+
+Running django app
+===================
+
+docker-compose run app sh -c "python manage.py test"
+
+
+TIPS
+=======
+
+Don't import user model directly because if it needs to chnge you need to change all it's references.
+Instead use get_user_model
